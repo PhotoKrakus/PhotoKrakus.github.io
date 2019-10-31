@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="GIT - system kontroli wersji">
+        <meta name="author" content="Krzysztof Szuszkiewicz - FotoKrakus (fotokrakus.com)">
+        <title>GIT - System Kontroli Wersji</title>
+        <link rel="shortcut icon" href="../img/icons/favicon.ico">
+		<link rel="stylesheet" href="../fonts/awesome/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/bootstrap-theme.css" media="screen">
+        <link rel="stylesheet" href="../css/main.css" type="text/css">
+        <!--[if lt IE 9]>
+            <script src="../js/html5shiv.js"></script>
+            <script src="../js/respond.min.js"></script>
+            <![endif]-->
+    </head>
+
+    <body>
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top headroom">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Button for smallest screens -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="../img/logo/logo.png" alt="HOME FotoKrakus.com">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li>
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">GIT</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">GIT Pages
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="git-more.html">Git - repo</a>
+                                </li>
+                                <li>
+                                    <a href="uprawnienia.html">Uprawnienia</a>
+                                </li>
+                                <li>
+                                    <a href="problemy.html">Problemy, błędy</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <li>
+                            <a class="btn" href="http://fotokrakus.com/webmastering/">Webmastering</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+        <!-- /.navbar -->
+        <header id="head" class="secondary"></header>
+        <!-- container -->
+        <div class="container">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="active">GIT</li>
+            </ol>
+            <div class="row">
+                <!-- <aside class="col-sm-3 sidebar sidebar-right"> -->
+                <aside class="col-sm-3 sidebar">
+                    <div class="widget">
+                        <h4>Vacancies</h4>
+                        <ul class="list-unstyled list-spaces">
+                            <li>
+                                <a href="">Lorem ipsum dolor</a>
+                                <br>
+                                <span class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, laborum.</span>
+                            </li>
+                            <li>
+                                <a href="">Totam, libero, quis</a>
+                                <br>
+                                <span class="small text-muted">Suscipit veniam debitis sed ipsam quia magnam eveniet perferendis nisi.</span>
+                            </li>
+                            <li>
+                                <a href="">Enim, sequi dignissimos</a>
+                                <br>
+                                <span class="small text-muted">Reprehenderit illum quod unde quo vero ab inventore alias veritatis.</span>
+                            </li>
+                            <li>
+                                <a href="">Suscipit, consequatur, aut</a>
+                                <br>
+                                <span class="small text-muted">Sed, mollitia earum debitis est itaque esse reiciendis amet cupiditate.</span>
+                            </li>
+                            <li>
+                                <a href="">Nam, illo, veritatis</a>
+                                <br>
+                                <span class="small text-muted">Delectus, sapiente illo provident quo aliquam nihil beatae dignissimos itaque.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <!-- Article main content -->
+                <!--      <article class="col-sm-9 maincontent">-->
+                <article class="col-sm-9">
+                    <header class="page-header">
+                        <h1 class="page-title">GIT - system kontroli wersji</h1>
+                    </header>
+                    <h3>Tworzymy projekt</h3>
+                    <p>Na początek coś o niezbyt skomplikowanej strukturze plików w katalogu:</p>
+                    <p>
+                        <img src="../img/pic/git_tree-300x87.png" alt="GIT tree">
+                    </p>
+                    <p>W języku "GITowym" projekt, nad którym pracujemy jest nazwany
+                        <span class="bold">working tree</span>. Wszystko co musimy zrobić, aby objąć projekt kontrolą wersji jest użycie komendy:</p>
+                    <pre>1 > <span class="bold-blue">git init</span>
+                    </pre>
+                    <p>Spowoduje to utworzenie ukrytego folderu .git, w którym umieszczane są informacje o naszym projekcie.
+                    </p>
+                    <p>W większości systemów kontroli wersji, przechowywanie informacji o plikach umiejscowią się w dwóch miejscach. Bezpośrednio w projekcie lub w centralnym repozytorium.
+                    </p>
+                    <p> GIT wprowadził coś nowego – warstwę pośrednią pomiędzy projektem, a repozytorium:
+                        <span class="bold">Staging area</span> (lub
+                        <span class="bold">Staging Index</span>). W indeksie tym przechowywane są informacje o całym naszym projekcie, tu kontroluje się zmiany i w przypadku, gdy jesteśmy ze zmian zadowoleni to je commitujemy do repozytorium. Daje to nam
+                        taką korzyść, że nie zaśmiecamy ani projektu, ani repozytorium zbędnymi informacjami.
+                    </p>
+                    <h3>Staging index</h3>
+                    <p>Aby wprowadzić plik do indexu wystarczy wydać komendę:</p>
+                    <pre>1 > <span class="bold-blue">git add</span>
+                    </pre>
+                    <p>Warto zauważyć, że index przechowuje informacje o wszystkich plikach, nie tylko o plikach zmienionych.
+                        <br> Dodajemy nasz plik do projektu:</p>
+                    <pre>1 > <span class="bold-blue">git add plik1.txt</span>
+                    </pre>
+                    <p>Oraz cały folder</p>
+                    <pre>1 > <span class="bold-blue">git add folder1</span>
+                    </pre>
+                    <p>Teraz wszystkie pliki, które posiadamy znajdują się w Staging area</p>
+                    <p>
+                        <img src="../img/pic/git-4-300x115.png" alt="projekt">
+                    </p>
+                    <p>W każdej chwili, możemy zobaczyć, co się zmieniło w naszym projekcie od ostatniego zatwierdzenia (commit) wydając komendę:
+                    </p>
+                    <pre>
+                            1 > <span class="bold-blue">git status</span>
+                    </pre>
+                    <p>Pokazywany nam jest raport ze zmianami w naszym
+                        <span class="bold">working tree</span>. Pliki mogą być wymienione w dwóch oddzielnych sekcjach raportu: pliki zmienione i dodane do
+                        <span class="bold">staging area</span> oraz pliki zmienione i nie dodane do staging area.</p>
+                    <h3>Zatwierdzanie zmian</h3>
+                    <p>Gdy wszystkie zmiany, których dokonaliśmy są OK musimy je zatwierdzić. Dokonujemy tego poleceniem:</p>
+                    <pre>1 > <span class="bold-blue">git commit</span>
+                    </pre>
+                    <p>Otworzy się edytor, gdzie należy wpisać opis commitu. Jeżeli tytuł jest krótki, możemy go wpisać od razu przy commicie za parametrem ' -m '. Na przykład:
+                    </p>
+                    <pre>1 > <span class="bold-blue">git commit -m "initial commit"</span>
+                    </pre>
+                    <p>
+                        <img src="../img/pic/git-5-300x79.png" alt="projekt">
+                    </p>
+                    <p>W GIT nie nadaje się liczbowych numerów rewizji, tak jak ma to miejsce np. w Subversion. Tutaj każdy commit jest określony kluczem SHA wyliczanym na podstawie zawartości working tree. Dla przykładu w moim prostym projekcie pierwszy commit
+                        otrzymał identyfikator:
+                    </p>
+                    <p>52e0188f4b5f082427cc9df07451cc5daa169f63</p>
+                    <p>Może na początku wydawać nam się dziwne takie identyfikowanie wersji, ale jest skuteczne. Zwłaszcza, że musimy pamiętać o architekturze systemu git. Tutaj nie ma centralnego repozytorium i można prowadzić dwa równoległe.</p>
+                    <p> Gdy po jakimś czasie zdecydowalibyśmy się na synchronizację to byłby problem, bo w każdym repozytorium znalazłyby się rewizje 1, 2, 3 itd. ale zawartości tych rewizji byłyby różne. Aby zapobiec takim sytuacjom wprowadzono klucz SHA jako
+                        identyfikator.
+                    </p>
+                    <p>Co jednak jeżeli w przyszłości chcielibyśmy cofnąć nasz projekt do któregoś momentu? Czy musimy podać cały klucz? Otóż nie. Wystarczy podać tyle pierwszych znaków ile wystarczy na jednoznaczne zidentyfikowanie.
+                    </p>
+                    <p> W przypadku na przykład gdy mamy dwie rewizje i klucz każdej zaczyna się od innej literki (albo cyferki) to wystarczy podać pierwszy znak klucza aby jednoznacznie zidentyfikować. Niepisaną regułą jest podawanie
+                        <span class="bold">7-iu znaków</span> do identyfikacji rewizji. Jest to wystarczająca w większości przypadków liczba jednoznacznie identyfikująca. Tyle też znaków jest podawanych po zcommitowaniu zmian w raporcie.</p>
+                    <h3>Project</h3>
+                    <p>
+                        <img src="../img/pic/git-6-300x114.png" alt="projekt">
+                    </p>
+                    <p>Commit tak samo jak Staging area jest "stemplem" całego working tree – są tam informacje o wszystkich plikach i folderach znajdujących się w danym momencie, a nie tylko te, które się zmieniły.</p>
+                    <p>
+                        <img src="../img/pic/git-7-300x266.png" alt="projekt">
+                    </p>
+                    <p>Podsumowując: cała operacja kontroli wersji wykonywana jest w trzech krokach: Pierwszym krokiem jest zmiana zawartości working tree, np. dodanie pliku, usunięcie pliku lub edycja pliku. Drugim krokiem jest zatwierdzenie tej zmiany i przeniesienie
+                        jej do Staging area poprzez wykonanie komendy git add. Trzecim krokiem jest zatwierdzenie zmian poprzez git commit i przeniesienie całego Staging index do Commit.</p>
+                    <p>Co to nam daje?
+                        <br> Wyobraźmy sobie, że pracujemy z większym projektem. Dokonaliśmy już kilkadziesiąt modyfikacji i nagle otrzymujemy wiadomość, że w jednym z plików jest poważny błąd. Naprawiamy go, stage’ujemy go (git add) a następnie commitujemy
+                        poprawkę. Po czym spokojnie wracamy do naszej pracy, bo reszta plików, którą zmieniliśmy podczas naszej dotychczasowej pracy została nietknięta w naszym working tree. Jak dokonalibyśmy tego w subversion? Musielibyśmy się nakombinować
+                        z filelock albo z branchami. Tu mamy to out-of-the-box.</p>
+                    <p>Może wydawać się trudne prowadzenie w ten sposób repozytorium, ale po krótkim czasie przyzwyczajamy się, a po kilku chwilach potem nie będziemy potrafili bez tego żyć :)</p>
+                    <p>Istnieje także ułatwienie aby oba kroki dokonać za jednym razem. Podczas commita dodajemy parametr -a i wszystkie pliki, które zostały zmienione (ale nie te co zostały dodane) automatycznie przenoszone są do Staging index i wykonywany
+                        jest commit.</p>
+                    <h3>Sprawdzanie zmian</h3>
+                    <p>Aby zobaczyć co działo się w naszym repozytorium wystarczy wykonać komendę:</p>
+                    <pre>
+              1 > <span class="bold-blue">git log</span>
+                    </pre>
+                    <p>Wyświetli nam się lista zmian, rozpoczynając od ostatniej. Podane są informacje o symbolu commita, autorze, dacie i wiadomość, która została wpisana wraz z commitem.
+                        <br> Dodanie parametru --pretty=oneline pokaże w jednej lini klucz sha i&nbsp;message, a dodanie jeszcze parametru --abbrev=commit skróci klucz do 7-miu znaków.</p>
+                    <h3>Przykład z poznanymi komendami GIT-a</h3>
+                    <p>Myślę, że w tym miejscu należy się jakiś solidny przykład do komend, które właśnie poznaliśmy. Zatem wracając do przykładu z początku artykułu – pracujemy nad bardzo ubogim projektem posiadającym jeden plik w folderze głównym oraz jeden
+                        folder z drugim plikiem.</p>
+                    <p>Usuwamy wszystkie pliki i katalog, z którymy dotychczas pracowaliśmy, i&nbsp;ponownie tworzymy strukturę katalogu:
+                    </p>
+                    <p>
+                        <img src="../img/pic/git_tree-300x87.png" alt="projekt">
+                    </p>
+                    <p> Wykonujemy komendę:</p>
+                    <pre>
+1 > <span class="bold-blue">git init</span>
+                    </pre>
+                    <p>aby zainicjować kontrolę wersji. Zaraz potem wykonujemy</p>
+                    <pre>
+1 > <span class="bold-blue">git status</span>
+                    </pre>
+                    <p>aby zobaczyć co się zmieniło. Otrzymujemy:</p>
+                    <pre>
+1<span class="bold-orange"> ...</span>
+2<span class="bold-orange"> # Untracked files:</span>
+3<span class="bold-orange"> # (use "git add ..." to include in what will be committed)</span>
+4<span class="bold-orange"> #</span>
+5<span class="bold-orange"> # folder1/</span>
+6<span class="bold-orange"> # plik1.txt</span>
+                    </pre>
+                    <p>Czyli zarówno plik jak i folder nie są pod kontrolą wersji.
+                        <br>Dodajmy plik:</p>
+                    <pre>
+1 > <span class="bold-blue">git add plik1.txt</span>
+                    </pre>
+                    <p>i sprawdźmy status raz jeszcze:</p>
+                    <pre>
+1<span class="bold-orange"> ...</span>
+2<span class="bold-orange"> # Changes to be committed:</span>
+3<span class="bold-orange"> # (use "git rm --cached ..." to unstage)</span>
+4<span class="bold-orange"> #</span>
+4<span class="bold-orange"> # new file: plik1.txt</span>
+5<span class="bold-orange"> #</span>
+6<span class="bold-orange"> # Untracked files:</span>
+7<span class="bold-orange"> # (use "git add ..." to include in what will be committed)</span>
+8<span class="bold-orange"> #</span>
+9<span class="bold-orange"> # folder1/</span>
+                    </pre>
+                    <p>W tej chwili gdybyśmy wykonali commit – dodałoby do commita tylko plik a nie folder. Nie chcemy tego (na razie), więc dodajmy także folder.</p>
+                    <pre>
+1<span class="bold-blue">   > git add folder1</span>
+2<span class="bold-orange"> ...</span>
+3<span class="bold-orange"> # Changes to be committed:</span>
+4<span class="bold-orange"> # (use "git rm --cached ..." to unstage)</span>
+5<span class="bold-orange"> #</span>
+6<span class="bold-orange"> # new file: folder1/plik2.txt</span>
+7<span class="bold-orange"> # new file: plik1.txt</span>
+                    </pre>
+                    <p>i zatwierdzamy zmiany jako "inital commit" czy jak tam chcemy nazwać:</p>
+                    <pre>
+1<span class="bold-blue">  > git commit -m "initial commit"</span>
+                    </pre>
+                    <p>Od razu otrzymujemy odpowiedź:</p>
+                    <pre>
+1<span class="bold-blue">   [master (root-commit)</span>
+2<span class="bold-orange"> 68c7006</span> ] initial commit
+3<span class="bold-blue">   ...</span>
+4<span class="bold-orange"> 1</span> files changed,
+5<span class="bold-orange"> 1</span> insertions(+),
+6<span class="bold-orange"> 0</span> deletions(-)
+                    </pre>
+                    <p>widać nazwę commita oraz 7znaków klucza SHA. Sprawdźmy status:</p>
+                    <pre>
+1<span class="bold-blue"> > git status</span>
+2<span class="bold-blue"> ...</span>
+3<span class="bold-blue"> nothing to commit (working directory clean)</span>
+                    </pre>
+                    <p>Czyli jest ok. Sprawdźmy zatem staging w praniu.
+                        <br>Zmieńmy zawartość obu plików (
+                        <span class="bold"> plik1.txt i plik2.txt </span>) i sprawdźmy status:</p>
+                    <pre>
+1<span class="bold-orange"> ...</span>
+2<span class="bold-orange"> # modified: folder1/plik2.txt</span>
+3<span class="bold-orange"> # modified: plik1.txt</span>
+                    </pre>
+                    <p>teraz jeden plik dodajmy do staging area i zcommitujmy:</p>
+                    <pre>
+1<span class="bold-blue">    > git add plik1.txt</span>
+2<span class="bold-blue">    > git status</span>
+3<span class="bold-orange">  ...</span>
+4<span class="bold-orange">  # modified: plik1.txt</span>
+5<span class="bold-orange">  #</span>         >
+6<span class="bold-orange">  # Changed but not updated:</span>
+7<span class="bold-orange">  #</span>
+8<span class="bold-orange">  # modified: folder1/plik2.txt</span>
+9<span class="bold-orange">  ...</span>
+10<span class="bold-blue">   > git commit -m "2nd commit"</span>
+11<span class="bold-blue">   [master 4741a87] 2nd commit</span>
+12<span class="bold-blue">   1 files changed, 1 insertions(+), 1 deletions(-)</span>
+13<span class="bold-blue">   > git status</span>
+14<span class="bold-orange"> ...</span>
+15<span class="bold-orange"> # Changed but not updated:</span>
+16<span class="bold-orange"> #</span>
+17<span class="bold-orange"> # modified: folder1/plik2.txt</span>
+                    </pre>
+                    <p>Czyli jest tak jak zamierzaliśmy – w commicie znalazł się tylko plik1.txt – plik2.txt pozostał dalej w working tree. Zmieńmy ponownie plik1.txt i dodajmy do staging area – wrócimy do poprzedniej sytuacji...</p>
+                    <pre>
+1<span class="bold-blue">   > vim plik1.txt</span>
+2<span class="bold-blue">   > git add plik1.txt</span>
+3<span class="bold-blue">   > git status</span>
+4<span class="bold-orange"> # Changes to be committed:</span>
+5<span class="bold-orange"> # modified: plik1.txt</span>
+6<span class="bold-orange"> #</span>
+7<span class="bold-orange"> # Changed but not updated:</span>
+8<span class="bold-orange"> # modified: folder1/plik2.txt</span>
+                    </pre>
+                    <p>czyli posiadamy dwa edytowane pliki, ale jeden tylko w staging index. Spróbujmy zatwierdzić je oba razem:</p>
+                    <pre>
+1<span class="bold-blue">  > git commit -a -m "3rd commit"</span>
+2<span class="bold-blue">  [master 1ed35d3] 3rd commit</span>
+3<span class="bold-blue">  2 files changed, 2 insertions(+), 1 deletions(-)</span>
+4<span class="bold-blue">  > git status</span>
+5<span class="bold-orange"># nothing to commit (working directory clean)</span>
+                    </pre>
+                    <p>
+                        Nice… dodało oba pliki, ten który był w staging area oraz drugi, który nie był. Pamiętajmy, że w przypadku, gdy dodamy nowy plik to musimy go ręcznie dodać do staging index.</p>
+                    <p>Rzućmy okiem na log naszego repozytorium:</p>
+                    <pre>
+1<span class="bold-blue">   > git log --pretty-oneline --abbrev-commit</span>
+2<span class="bold-orange"> 1ed35d3 3rd commit</span>
+3<span class="bold-orange"> 4741a87 2nd commit</span>
+4<span class="bold-orange"> 68c7006 initial commit</span>
+                    </pre>
+                    <p>Możemy także z ciekawości zerknąć na to co wyświetli nam samo git log
+                        <br> Skoro przyjęliśmy już jakiś zakres wiedzy idziemy dalej:)
+                    </p>
+                    <h3>Cofanie zmian</h3>
+                    <p>Co jednak jeżeli chcemy cofnąć zmiany, które wykonaliśmy na plikach? Wszystko zależy od tego jak daleko chcemy się cofnąć. Inaczej jest gdy zmiany nie zostały dodane do staging area a inaczej, jeżeli pliki już są dodane.
+                    </p>
+                    <p>Jeżeli pliki nie są w staging area wystarczy wykonać komendę:</p>
+                    <pre>
+1<span class="bold-blue"> > git checkout nazwa_pliku_lub_folderu</span>
+                    </pre>
+                    <p>Sprawdźmy:</p>
+                    <pre>
+1<span class="bold-blue">   > git status</span>
+2<span class="bold-blue">     nothing to commit (working directory clean)</span>
+3<span class="bold-blue">   > echo "jakiś tekst" >> plik1.txt</span>
+4<span class="bold-blue">   > git status</span>
+5<span class="bold-orange"> # Changed but not updated:</span>
+6<span class="bold-orange"> #</span>
+7<span class="bold-orange"> # modified: plik1.txt</span>
+8<span class="bold-blue">   > git checkout plik1.txt</span>
+9<span class="bold-blue">   > git status</span>
+10<span class="bold-blue">    nothing to commit (working directory clean)</span>
+                    </pre>
+                    <p>Jeżeli nie podamy nazwy pliku to zostaną cofnięte wszystkie zmiany w naszym working tree</p>
+                    <p>
+                        <img src="../img/pic/git-8-300x88.png" alt="projekt">
+                    </p>
+                    <p>Jeżeli pliki są dodane już do staging area, musimy je najpierw z niego "wyjąć" a potem dopiero cofnąć zmiany. Do tego służy komenda:</p>
+                    <pre>
+1<span class="bold-blue">  > git reset HEAD nazwa_pliku</span>
+                    </pre>
+                    <br>
+                    <p>Jeżeli nie podamy nazwy pliku to zostaną zresetowane wszystkie. Dopiero jak plik zresetujemy to możemy go cofnąć poprzez git checkout HEAD odnosi się zawsze do ostatniego commita</p>
+                    <p>
+                        <img src="../img/pic/git-9-300x88.png" alt="projekt">
+                    </p>
+                    <p>Przykład</p>
+                    <pre>
+1<span class="bold-blue">    > git status</span>
+2<span class="bold-blue">      nothing to commit (working directory clean)</span>
+3<span class="bold-blue">    > echo "napis" >> plik1.txt</span>
+4<span class="bold-blue">    > git add plik1.txt</span>
+5<span class="bold-blue">    > git status</span>
+6<span class="bold-blue">    ...</span>
+7<span class="bold-orange">  # Changes to be committed:</span>
+8<span class="bold-orange">  #</span>
+9<span class="bold-orange">  # modified: plik1.txt</span>
+10<span class="bold-blue">   > git reset HEAD plik1.txt</span>
+11<span class="bold-blue">   > git status</span>
+12<span class="bold-orange"> # Changed but not updated:</span>
+13<span class="bold-orange"> #</span>
+14<span class="bold-orange"> # modified: plik1.txt</span>
+15<span class="bold-blue">   > git checkout plik1.txt</span>
+16<span class="bold-blue">   > git status</span>
+17<span class="bold-blue">     nothing to commit (working directory clean)</span>
+                    </pre>
+                    <h3>Cofanie zmian zatwierdzonych</h3>
+                    <p>Zawsze podczas pracy jest tak, że trzeba się cofnąć do poprzedniego commita. Jeżeli będziemy do tego zmuszeni to dokonamy tego poprzez:</p>
+                    <pre>
+1<span class="bold-blue">> git revert klucz_SHA_commita_do_ktorego_sie cofamy</span>
+                    </pre>
+                    <p>(Oczywiście, że klucz wystarczy podać w postaci 7-io zakowej. ) Co się wtedy stanie? Technicznie nie cofamy się lecz idziemy do przodu – zostaje utworzony nowy commit, który jest identyczny wraz z commitem do którego się odnosimy:</p>
+                    <pre>
+1<span class="bold-blue">  > git log --pretty=oneline --abbrev-commit</span>
+2<span class="bold-orange">  1ed35d3 3rd commit</span>
+3<span class="bold-orange">  4741a87 2nd commit</span>
+4<span class="bold-orange">  68c7006 initial commit</span>
+5<span class="bold-blue">  > git revert 1ed35d3</span>
+6<span class="bold-blue">  > git log --pretty=oneline --abbrev-commit</span>
+7<span class="bold-orange">  3503b43 Revert "3rd commit"</span>
+8<span class="bold-orange">  1ed35d3 3rd commit</span>
+9<span class="bold-orange">  4741a87 2nd commit</span>
+10<span class="bold-orange"> 68c7006 initial commit</span>
+                    </pre>
+                    <p>Nic nie stoi na przeszkodzie, abyśmy cofnęli się dalej niż do ostatniego commita, jednak to może powodować problemy z synchronizacją (a o tym jak je rozwiązywać będzie później). Cofamy się do commita "2nd commit":</p>
+                    <pre>
+1<span class="bold-blue">    > git revert 4741a87</span>
+2<span class="bold-blue">    > git log --pretty=oneline --abbrev-commit</span>
+3<span class="bold-blue">    d4976a7 Revert "2nd commit"</span>
+4<span class="bold-orange">  3503b43 Revert "3rd commit"</span>
+5<span class="bold-orange">  1ed35d3 3rd commit</span>
+6<span class="bold-orange">  4741a87 2nd commit</span>
+7<span class="bold-orange">  68c7006 initial commit</span>
+                    </pre>
+                    <p>
+                        <img src="../img/pic/git-10-294x300.png" alt="projekt">
+                    </p>
+                    <h3>Porównywanie wersji</h3>
+                    <p>Jeżeli chcemy obejrzeć różnice między naszym working tree a commitem używamy komendy:</p>
+                    <pre>
+1<span class="bold-blue">   > git show</span>
+2<span class="bold-orange">   76a7c8c</span>
+                    </pre>
+                    <p>używając oczywiście klucza commita, do którego chcemy się porównywać.</p>
+                    <p>Jeżeli jednak chcemy obejrzeć różnice pomiędzy dwoma różnymi commitami to używamy komendy:</p>
+                    <pre>
+1<span class="bold-blue">   > diff adf8342..</span>
+2<span class="bold-orange">   ... </span>
+                    </pre>
+                    <p>Gdy chcemy obejrzeć całą historię zmian, która nastąpiła w naszym projekcie to używamy:</p>
+                    <pre>
+1<span class="bold-blue"> > git log -p</span>
+                    </pre>
+                    <h3>Tagowanie</h3>
+                    <p>Głównym problemem Subversion jest to, że tagowanie repozytorium polega na kopiowaniu całego repozytorium w inne miejsce. Przy dużych projektach może to być problem ze względu na szybko rozrastające się repozytorium.
+                        <br>
+                        <br>W GIT’cie tego nie ma. Gdy chcemy robić taga, to po prostu oznaczamy jednego z commitów i nie tracimy miejsca na dysku. Tagowanie jest przydatne o tyle, że możemy używać taga zamiast klucza SHA odwołując się do tego konkretnego
+                        commita. W jaki sposób tagujemy? Jeżeli chcemy otagować ostatniego commita wystarczy podać:
+                    </p>
+                    <pre>
+1<span class="bold-blue">> git tag nazwa_taga</span>
+                    </pre>
+                    <p>Jeżeli jednak chcemy otagować commita, który nie jest ostatnim, to musimy podać jego klucz SHA na końcu:</p>
+                    <pre>
+1<span class="bold-blue">   > git tag nazwa_taga</span>
+2<span class="bold-orange">   7ad87cc</span>
+                    </pre>
+                    <p>Naturalną czynnością jest tagowanie kolejnych wersji naszego projektu, np.</p>
+                    <pre>
+<span class="bold-blue">  > git tag 0.97</span>
+                    </pre>
+                    <p>Jak już wspomniałem, można używać tagów zamiast kluczy SHA, np.:</p>
+                    <pre>
+<span class="bold-blue">  > git diff wersja_1..wersja_1.2</span>
+                    </pre>
+                    <p>porównuje commity otagowane kolejno "wesja_1" oraz "wersja_1.2"</p>
+                    <p>
+                        <img src="../img/pic/git-12-299x255.png" alt="projekt">
+                    </p>
+                    <h3>Praca równoległa</h3>
+                    <p>Pracując w większych zespołach nad jednym projektem zdarza się, że każdy z członków zespołu pracuje nad inną funkcjonalnością. Są jakoby prowadzone dwie (lub więcej) równoległych ścieżek powstawania projektu. Oba te ‚podprojekty’ będą
+                        połączone w całość. Może być nawet tak, że chcemy „wypróbować” czy np. nowa technologia będzie dobrze działać z naszym projektem. Nie warto wtedy robić tego w głównej ścieżce powstawania tylko wypada zrobić równoległą.
+                        <br>
+                        <br> Takie równoległe nazywa się gałęziami (branches). Branchowanie to rozdzielanie projektu na kilka równoległych ścieżek powstawania, gdzie na koniec oba branche mogą zostać połączone z powrotem w jedną ścieżkę (merging). Automatycznie
+                        gdy inicjujemy projekt powstaje branch o nazwie master. Jest to główna ścieżka powstawania projektu. Mogliśmy zauważyć tą nazwę np. podczas dokonywania commitu. Jeżeli chcemy zobaczyć który branch jest aktualny wydajemy komendę:</p>
+                    <pre>
+<span class="bold-blue">> git branch -v</span>
+                    </pre>
+                    <p>Ukaże nam się informacja o nazwie brancha, kluczu commita i jego nazwie, np.:</p>
+                    <pre>
+<span class="bold-blue"> * master d4976a7 Revert "2nd commit"</span>
+                    </pre>
+                    <p>Listę branchy możemy w każdej chwili zobaczyć wydając komendę:</p>
+                    <pre>
+<span class="bold-blue"> > git branch </span>
+                    </pre>
+                    <p>gwiazdka przy nazwie oznacza aktualny branch</p>
+                    <h3>Tworzenie oddzielnej gałęzi</h3>
+                    <p>Stworzenie nowego brancha sprowadza sie do wydania komendy git branch wraz z jego planowaną nazwą oraz kluczem commita, który ma być jakby punktem startowym dla tej gałęzi. Jak zawsze, jeżeli nie podamy klucza to będzie użyty aktualny
+                        commit.
+                    </p>
+                    <pre>
+1<span class="bold-blue">  > git branch slave</span>
+2<span class="bold-blue">  > git branch</span>
+3<span class="bold-blue">  * master</span>
+4<span class="bold-blue">    slave</span>
+                    </pre>
+                    <h3>Przełączanie się między branchami</h3>
+                    <p>Aby przełączyć się pomiędzy gałęziami musimy użyć komendy git checkout z nazwą brancha którego chcemy użyć.</p>
+                    <pre>
+1<span class="bold-blue"> > git branch</span>
+2<span class="bold-blue"> * master</span>
+3<span class="bold-blue">   slave</span>
+4<span class="bold-blue"> > git checkout slave</span>
+5<span class="bold-blue">   Switched to branch 'slave'</span>
+6<span class="bold-blue"> > git branch</span>
+7<span class="bold-blue">   master</span>
+8<span class="bold-blue"> * slave</span>
+                    </pre>
+                    <p>
+                        <img src="../img/pic/git-13-300x130.png" alt="projekt">
+                    </p>
+                    <p>
+                        <img src="../img/pic/git-14-300x154.png" alt="projekt">
+                    </p>
+                    <p>Teraz wszystkie zmiany których dokonamy będą zatwierdzane w tej gałęzi</p>
+                    <pre>
+1<span class="bold-blue">  > echo "jestem w branchu" >> plik1.txt</span>
+2<span class="bold-blue">  > git commit -a -m "4th commit"</span>
+3<span class="bold-blue">  > git branch -v</span>
+4<span class="bold-blue">    master d4976a7 Revert "2nd commit"</span>
+5<span class="bold-blue">  * slave
+              6<span class="bold-orange">  36e4883</span> 4th commit</span>
+                    </pre>
+                    <p>
+                        <img src="../img/pic/git-15-300x157.png" alt="projekt">
+                    </p>
+                    <p>Przełączając się między gałęziami aktywujemy ostatni commit tej gałęzi, np. wykonianie</p>
+                    <pre>
+1<span class="bold-blue">> git checkout master</span>
+                    </pre>
+                    <p>aktywuje commit, w którym gałęzie się rozdzieliły (akurat w tym przypadku) i każdy koleny commit będzie od tego miejsca w tej właśnie ścieżce.</p>
+                    <p>
+                        <img src="../img/pic/git-16-300x150.png" alt="projekt">
+                    </p>
+                    <pre>
+1<span class="bold-blue">       > echo "jestem w głównej ścieżce" >> folder1/plik2.txt</span>
+2<span class="bold-blue">       > git commit -a -m "5th commit"</span>
+3<span class="bold-blue">       > git branch -v</span>
+4<span class="bold-blue">       * master b1e1e1b
+5<span class="bold-orange">   5th</span> commit</span>
+6<span class="bold-blue">     slave
+7<span class="bold-orange"> 36e4883 4th</span> commit</span>
+                    </pre>
+                    <p>
+                        <img src="../img/pic/git-17-300x214.png" alt="projekt">
+                    </p>
+                    <p>W systemie GIT tworzenie branchy jest tak samo „tanie” jak tagów. To jest jeden z powodów „wyższości GIT nad Subversion” (moim zdaniem). W związku z tanim kosztem utworzenia brancha, niektórzy programiści tworzą je przy każdej okazji (nowy
+                        feature w nowym branchu).
+                        <br> W życiu każdego projektu podzielonego na kilka gałęzi nadchodzi taka chwila, gdzie trzeba będzie się z powrotem połączyć.
+                    </p>
+                    <h3>Łączenie równoległych gałęzi</h3>
+                    <p>
+                        Jak już prędzej gdzieś napisałem – łączenie dwóch równoległych gałęzi nazywa się mergingiem(nie podoba mi się spolszczanie angielskich wyrazów, jeśli jednak chodzi o język techniczny to nie mam nic przeciw – bo każdy może sobie przetłumaczyć inaczej i
+                        nie zrozumiemy nawet prostych przekazów.)</p>
+                    <p>
+                        Łączenia dokonujemy z gałęzi do której łączymy ( przeważnie jest to master, czyli główna linia projektu) i podajemy nazwę brancha, który ma być włączony. Dla przykładu aktualnie jesteśmy w masterze w Commit’cie „5th commit” i chcemy połączyć się z branchem
+                        „slave”:
+                    </p>
+                    <pre>
+1<span class="bold-blue">      > git merge slave</span>
+2<span class="bold-blue">      Merge made by recursive.</span>
+3<span class="bold-blue">      plik1.txt |</span>
+4<span class="bold-orange">    1</span>
+5<span class="bold-blue">       +
+6<span class="bold-orange">    1</span> files changed,
+7<span class="bold-orange">    1</span> insertions(+),
+8<span class="bold-orange">    0</span> deletions(-)</span>
+                    </pre>
+                    <p>
+                        tym razem obyło się bez problemów.
+                        <br> W gałęzi master został utworzony nowy commit (nazwany "merge branch 'slave'") w którym zostały uwzględnione poprawki z obu gałęzi.
+                    </p>
+                    <p>
+                        <img src="../img/pic/git-18-300x208.png" alt="projekt">
+                    </p>
+                    <p>Czasami jednak nie jest tak wesoło. Zwłaszcza gdy w obu ścieżkach wyedytujemy ten sam plik. Spróbujmy wyedytować plik1.txt w obu gałęziach jednocześnie.
+                    </p>
+                    <pre>
+1<span class="bold-blue"> > echo "master górą" >> plik1.txt</span>
+2<span class="bold-blue"> > git commit -a -m "6th commit"</span>
+3<span class="bold-blue"> [master </span> <span class="bold-orange">539525c</span>]
+4<span class="bold-blue"> > git checkout slave</span>
+5<span class="bold-blue"> Switched to branch 'slave'</span>
+6<span class="bold-blue"> > echo "master dołem" >> plik1.txt</span>
+7<span class="bold-blue"> git commit -a -m "7th commit"</span>
+8<span class="bold-blue"> [slave  <span class="bold-orange">9705a98</span>]  <span class="bold-orange">7th</span> commit</span>
+                    </pre>
+                    <p>Teraz przełączamy się z powrotem do głównej gałęzi i robimy
+                        <strong>merge</strong>
+                    </p>
+                    <pre>
+1<span class="bold-blue"> > git checkout master</span>
+2<span class="bold-blue"> Switched to branch 'master'</span>
+3 > git merge slave
+4<span class="bold-blue"> Auto-merging plik1.txt</span>
+5<span class="bold-blue"> CONFLICT (content): Merge conflict in plik1.txt</span>
+6<span class="bold-blue"> Automatic merge failed; fix conflicts and then commit the result.</span>
+                    </pre>
+                    <p>Niestety w równoległej pracy często tak się zdarza, że sa konflikty. Jak je ominąć?
+                        <br> Musimy wyedytować konfliktowy plik. Zobaczymy tam coś takiego:</p>
+                    <pre>
+1<span class="bold-blue">  &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:plik1.txt</span>
+2<span class="bold-blue">  master górą</span>
+3<span class="bold-blue">  =======</span>
+4<span class="bold-blue">  master dołem</span>
+5<span class="bold-blue">  &gt;&gt;&gt;&gt;&gt;&gt;&gt; slave:plik1.txt</span>
+                    </pre>
+                    <p>Dopisane zostały wersje z obu plików wraz z nagłówkami, która wersja pochodzi z której gałęzi. W takim wypadku musimy ręcznie usunąć tą wersją, która jest zła, oraz oba nagłówki.
+                    </p>
+                    <p>Następnie musimy dodać plik do staging area poprzez git add plik1.txt i to wszystko – po konflikcie.
+                    </p>
+                    <p>Na koniec wypada usunąć nieużywaną gałąź używając komendy:</p>
+                    <pre>
+1<span class="bold-blue"> > git branch -d slave</span>
+                    </pre>
+                    <p>i po kłopocie :)</p>
+                </article>
+                <!-- /Article -->
+                <!-- Sidebar -->
+                <!-- /Sidebar -->
+            </div>
+        </div>
+        <!-- /container -->
+        <footer id="footer" class="top-space">
+            <div class="footer1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 widget">
+                            <h3 class="widget-title">Contact</h3>
+                            <div class="widget-body">
+                                <p>+48 12 1234567
+                                    <br>
+                                    <a href="mailto:#">sabazia@interia.pl</a>
+                                    <br>
+                                    <br> Poland, Cracow City, Downtown.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 widget">
+                            <h3 class="widget-title">Follow me</h3>
+                            <div class="widget-body">
+                                <p class="follow-me-icons">
+                                    <a href="https://twitter.com/Krakusek1959" class="social-icon-button twitter" target="_blank">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        <span></span>
+                                    </a>
+                                    <a href="https://plus.google.com/u/0/+KrzysztofSzuszkiewicz" class="social-icon-button gplus" target="_blank">
+                                        <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                        <span></span>
+                                    </a>
+                                    <a href="https://www.facebook.com/fotokrakus/" class="social-icon-button facebook" target="_blank">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        <span></span>
+                                    </a>
+                                    <a href="https://www.youtube.com/user/szusztof" class="social-icon-button youtube" target="_blank">
+                                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                                        <span></span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/krzysztof-szuszkiewicz-50b621141/" class="social-icon-button linkedin" target="_blank">
+                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                        <span></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 widget">
+                            <h3 class="widget-title">Text widget</h3>
+                            <div class="widget-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto
+                                    vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
+                                <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus
+                                    dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /row of widgets -->
+                </div>
+            </div>
+            <div class="footer2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 widget">
+                            <div class="widget-body">
+                                <p class="widget-simplenav">
+                                    <a href="../../index.html">Home</a> |
+                                    <a class="active" href="#">GIT</a> |
+                                    <a href="git-more.html">Git - repo</a> |
+                                    <a href="uprawnienia.html">page-left-b</a> |
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 widget">
+                            <div class="widget-body">
+                                <p class="text-right">
+                                    Copyright &COPY; 2018
+                                    <span class="glyphicon glyphicon-registration-mark" aria-hidden="true"></span>
+                                    <a href="#">FotoKrakus</a> | Made and updated 2000/2018
+                                    <a href="http://fotokrakus.com/"> Szuszkiewicz Krzysztof</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /row of widgets -->
+                </div>
+            </div>
+        </footer>
+        <script src="../js/jquery/jquery-3.2.1.min.js"></script>
+        <script src="../js/jquery/jQuery.headroom.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/headroom.min.js"></script>
+        <script src="../js/template.js"></script>
+        <script>
+            document.write('<script src="../js/top.js"><\/script>');
+        </script>
+    </body>
+
+</html>

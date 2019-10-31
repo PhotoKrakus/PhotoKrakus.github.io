@@ -1,3 +1,2 @@
-# PhotoKrakus.github.io
-
-Run
+# Initialize-Git-in-a-Project
+Initialize Git in a Project
