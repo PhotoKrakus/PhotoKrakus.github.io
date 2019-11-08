@@ -23,7 +23,7 @@ p {
 	min-height: 520px;
 	padding-top: 240px;
 	font-weight: 400;
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-family: "Open Sans", sans-serif;
 	text-align: center;
 	color: white;
 	background: #181015 url(../img/backgrounds/bg_header.png) no-repeat;
@@ -38,7 +38,7 @@ p {
 	margin-bottom: 6px;
 	font-size: 44px;
 	line-height: 1.15em;
-	font-family: "Lato", Arial, sans-serif;
+	font-family: "Lato", sans-serif;
 	color: #ffffff;
 }
 #head .tagline {

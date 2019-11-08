@@ -1,3 +1,5 @@
+@import 'docs';
+
 $color_1: white;
 $color_2: #ffffff;
 $color_3: rgba(255, 255, 255, 0.75);
@@ -295,7 +297,7 @@ img.pull-left {
 	.entry-meta {
 		margin: 0 0 35px 0;
 		padding: 2px 0;
-		font-size: 12px;
+	// font-size: 12px;
 		font-size: 0.75rem;
 		color: $color_11;
 		border-top: 1px solid #cccccc;
@@ -479,12 +481,13 @@ pre {
 	border-radius: 50%;
 	cursor: pointer;
 }
+
 $media (max-width: 767px) {
 	#head {
 		min-height: 420px;
 		padding-top: 160px;
-		.lead {
-			font-size: 34px;
+	.lead {
+		font-size: 34px;
 		}
 	}
 }

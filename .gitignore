@@ -1,0 +1,31 @@
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Folder config file
+desktop.ini
+*.ini
+
+# Windows shortcuts
+*.lnk
+
+### Sass ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+### SFTP configuration file
+.htaccess
+
+### Folders to ignore Yeoman
+bower_components/**/*
+build/
+build/**/*
+node_modules/**/*
+temp
+tmp
+.tmp
