@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://fotokrakus.com/</loc>
+  <lastmod>2019-05-27T19:02:43+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://fotokrakus.com/index.html</loc>
+  <lastmod>2019-05-27T19:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fotokrakus.com/privacy.html</loc>
+  <lastmod>2019-05-27T19:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fotokrakus.com/assets/gallery/galeria-poz.html</loc>
+  <lastmod>2019-05-27T19:02:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fotokrakus.com/assets/gallery/galeria-pion.html</loc>
+  <lastmod>2019-05-27T19:02:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fotokrakus.com/assets/gallery/galeria-kwadrat.html</loc>
+  <lastmod>2019-05-27T19:02:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fotokrakus.com/assets/gallery/galeria-noc.html</loc>
+  <lastmod>2019-05-27T19:02:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+</urlset>

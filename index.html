@@ -1,291 +1,762 @@
-﻿<!DOCTYPE html>
-<html lang="pl">
+<!DOCTYPE html>
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GIT - System kontroli wersji VCS, znany i otwarty system kontroli wersji">
-  <meta name="author" content="Krzysztof Szuszkiewicz - FotoKrakus (fotokrakus.com)">
-  <link rel="shortcut icon" href="./img/icons/favicon.ico">
-  <meta property="og:title" content="GIT - System kontroli wersji VCS">
-  <meta property="og:image" content="./img/icons/a4.jpg">
-  <meta property="og:site_name" content="FotoKrakus front-end - Portfolio">
-  <meta property="og:description"
-    content="GitHub opiera się na znanym i otwartym systemie kontroli wersji Git, pierwotnie zaprojektowanym przez Linusa Torvaldsa do opracowywania jądra systemu Linux.">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121868722-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  <!-- build:css -->
-  <link rel="stylesheet" type="text/css" href="./fonts/awesome/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="./fonts/open-sans-latin/css/open-sans-face.min.css">
-  <link rel="stylesheet" type="text/css" href="./fonts/poppins-latin/css/poppins-face.min.css">
-  <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="./css/bootstrap-theme.css" type="text/css">
-  <link rel="stylesheet" href="./css/main.css">
-  <!-- endbuild -->
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-121868722-1');
+    </script>
 
-  <title>GIT - Znany i otwarty system kontroli wersji rozwijany i utrzymywany przez społeczność Git</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="description" content="STUDIO ARTYSTYCZNE i twórcze pasjonatów fotografii ulicznej. Street Photo pokazuje codzienne chwile życia, jak też życie publiczne, ukazuje dynamiczne sceny">
+    <meta name="author" content="Szuszkiewicz Krzysztof FotoKrakus">
+	
+	<!-- icons -->
+    <link rel="shortcut icon" href="assets/images/icons/mstile-150x150.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/images/icons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/icons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon-180x180.png" />
+	<!-- end icons -->
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title"
+        content="Fotografia uliczna czyli StreetPhoto dla pasjonatów fotografii ulicznej zdjęć black and white">
+    <meta property="og:description"
+        content="Serwis dla pasjonatów fotografii ulicznej, która jest sztuką, wymaga dużo kreatywności, cierpliwości oraz umiejętności fotograficznych">
+    <meta property="og:image" content="https://fotokrakus.com/assets/images/ico/fotokrakus-streetphoto.jpg">
+    <meta property="og:url" content="https://fotokrakus.com/">
+    <meta property="fb:app_id" content="10151956978277079">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@FotoKrakus">
+    <meta name="twitter:title" content="Fotografia uliczna czyli StreetPhoto dla pasjonatów fotografii ulicznej">
+    <meta name="twitter:description"
+        content="Serwis dla pasjonatów fotografii ulicznej, która jest sztuką, wymaga dużo kreatywności oraz umiejętności fotograficznych">
+    <meta name="twitter:image" content="https://fotokrakus.com/assets/images/ico/fotokrakus-streetphoto.jpg">
+    <meta name="twitter:creator" content="@FotoKrakus">
+
+    <title>Studio artystyczne i twórcze miłośników fotografii ulicznej czyli StreetPhoto dla foto pasjonatów</title>   
+
+    <link rel="stylesheet" href="assets/tether/tether.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/socicon/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/theme/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/web/fonts/awesome/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/base.css" type="text/css">
+
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "Article",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://fotokrakus.com/"
+          },
+          "headline": "Studio artystyczne i twórcze miłośników fotografii ulicznej",
+          "image": "https://fotokrakus.com/assets/images/ico/fotokrakus-streetphoto.jpg",
+          "datePublished": "2019-05-27T08:00:00+08:00",
+          "dateModified": "2019-05-29T09:20:00+08:00",
+          "author": {
+            "@type": "Person",
+            "name": "Krzysztof Szuszkiewicz"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Studio artystyczne fotografii ulicznej",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://fotokrakus.com/assets/images/ico/logo-128x128.png"
+            }
+          },
+          "description": "Studio artystyczne i twórcze miłośników fotografii ulicznej czyli StreetPhoto dla foto pasjonatów"
+        }
+        </script>
 </head>
-<!--[if lt IE 9]>
-      <script src="./js/html5shiv.js"></script>
-      <script src="./js/respond.min.js"></script>
--->
 
 <body>
-  <!-- Fixed navbar -->
-  <div class="navbar navbar-inverse navbar-fixed-top headroom">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span
-            class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href="#"> <img src="./img/logo/logo.png" alt="HOME FotoKrakus.com"> </a> </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li class="active"> <a href="#">Home</a> </li>
-          <li> <a href="./pages/git.html">GIT</a> </li>
-          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">More pages <b
-                class="caret"></b> </a>
-            <ul class="dropdown-menu">
-              <li> <a href="./pages/git-more.html">Git - repo</a> </li>
-              <li> <a href="./pages/uprawnienia.html">Uprawnienia</a> </li>
-              <li> <a href="./pages/problemy.html">Problemy, błędy</a> </li>
-            </ul>
-          </li>
-          <li> <a href="./pages/contact.html">Contact</a> </li>
-          <li> <a class="btn" href="./pages/signin.html">Webmastering</a> </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- /.navbar -->
-  <!-- Header -->
-  <header id="head">
-    <div class="container">
-      <div class="row">
-        <h1 class="lead">GIT - System kontroli wersji - VCS</h1>
-        <h2 class="tagline">"Version Control Systems"</h2>
-      </div>
-    </div>
-  </header>
-  <!-- /Header -->
-  <!-- Intro -->
-  <div class="container text-center"> <br>
-    <br>
-    <h2 class="thin padding-bootom">Szkieletem GitHub jest rozproszony system kontroli wersji Git.</h2>
-    <p class="text-muted indent">Domyślnie na hostingach serwisów internetowych np. <a
-        href="https://github.com/">GitHub</a> tworzone repozytoria <span class="bold">Git</span> są widoczne dla
-      wszystkich. Serwis ten udostępnia darmowe i płatne miejsca na swoje repozytoria. Projektanci korzystających z
-      Git-a decydują się publicznie udostępniać swoją pracę od samego początku tworzenia projektu, aby przyciągnąć uwagę
-      i wcześnie skorzystać z udziału społeczności co do rozbudowy i poprawności działania kodu na różnych urządzeniach
-      i systemach. Niektóre grupy projektantów wolą pracować prywatnie nad projektami, dopóki nie będą
-      gotowe opublikować publicznie swoją pracę. <span class="bold">Prywatne repozytoria</span> zapewniają, że praca
-      jest ukryta, i ogranicza współpracę tylko do tych użytkowników, którzy mają dostęp do repozytorium. Te
-      repozytoriom można następnie upublicznić na późniejszym etapie, na przykład po testach na poprawne ich działanie.
-    </p>
-    <p class="text-muted padding-bootom">W niektórych przypadkach, gdy współpraca miała wyłącznie charakter prywatny,
-      niektóre repozytoria mogą nie zostać nigdy publicznie udostępnione. Korzystanie z <span class="bold">GitHub</span>
-      lub podobnego systemu kontroli wersji (śledzenie nie zastępuje dobrego zarządzania projektem); jest to
-      rozszerzenie, usprawnienie dobrego zarządzania projektami i plikami. Jednym z praktycznych aspektów korzystania
-      z GitHub jest radzenie sobie z dużymi plikami np. binarnymi. Pliki binarne, takie jak obrazy, wideo, pliki
-      wykonywalne lub inne nieprzetworzone dane, wykorzystywane w bioinformatyce, są przechowywane w Git jako jeden duży
-      obiekt. W rezultacie
-      każda zmiana, nawet jeśli jest minimalna, prowadzi do kompletnej nowej kopii pliku w repozytorium. </p>
-    <p class="text-muted indent">GitHub opiera się na znanym i otwartym systemie kontroli wersji Git, pierwotnie
-      zaprojektowanym przez Linusa Torvaldsa do opracowywania jądra systemu Linux, a teraz rozwijanego i utrzymywanego
-      przez społeczność Git. Jednym z powodów sukcesu GitHub
-      jest to, że oferuje coś więcej niż prostą usługę hostingu kodu źródłowego. Zapewnia programistom i badaczom
-      dynamiczne i oparte na współpracy środowisko, często określane jako platforma do kodowania społecznego, która
-      wspiera recenzowanie,
-      komentowanie i dyskusję. Szeroki wachlarz wysiłków, od pojedynczych do dużych projektów bioinformatycznych,
-      repozytoriów laboratoriów, a także globalna współpraca, sprawiły, że GitHub stał się produktywnym miejscem do
-      dzielenia się kodami
-      i pomysłami oraz do współpracy przy ich tworzeniu. </p>
-    <p class="text-muted padding-bootom">Szkieletem GitHub jest rozproszony <span class="bold">system kontroli
-        wersji</span> Git. Każda zmiana, od naprawienia literówki po całkowite przeprojektowanie oprogramowania, jest
-      śledzona i jednoznacznie identyfikowana. Chociaż Git ma złożony zestaw komend i może być używany
-      w raczej złożonych operacjach, nauka zastosowania podstaw wymaga jedynie kilku nowych koncepcji i poleceń, która
-      zapewni solidną podstawę do efektywnego śledzenia kodu i powiązanych treści dla projektów badawczych. </p>
-    <p class="text-right"> <a href="./pages/git.html" class="btn btn-primary btn-sm active" role="button"
-        aria-pressed="true">Learn more »</a> </p>
-  </div>
-  <!-- /Intro-->
-  <!-- Highlights - jumbotron -->
-  <div class="jumbotron top-space">
-    <div class="container">
-      <h3 class="text-center thin">Powody do korzystania z GIT</h3>
-      <div class="row">
-        <div class="col-md-3 col-sm-6 highlight">
-          <div class="h-caption">
-            <h4> <i class="fa fa-camera-retro"></i>Bootstrap-powered</h4>
-          </div>
-          <div class="h-body text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aliquid adipisci aspernatur. Soluta
-              quisquam dignissimos earum quasi voluptate. Amet, dignissimos, tenetur vitae dolor quam iusto assumenda
-              hic reprehenderit? </p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 highlight">
-          <div class="h-caption">
-            <h4> <i class="fa fa-cubes" aria-hidden="true">GIT</i> </h4>
-          </div>
-          <div class="h-body text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, commodi, sequi quis ad fugit omnis
-              cumque a libero error nesciunt molestiae repellat quos perferendis numquam quibusdam rerum repellendus
-              laboriosam reprehenderit! </p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 highlight">
-          <div class="h-caption">
-            <h4> <i class="fa fa-heart"></i>Creative Commons</h4>
-          </div>
-          <div class="h-body text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, vitae, perferendis, perspiciatis
-              nobis voluptate quod illum soluta minima ipsam ratione quia numquam eveniet eum reprehenderit dolorem
-              dicta nesciunt corporis? </p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 highlight">
-          <div class="h-caption">
-            <h4> <i class="fa fa-smile-o"></i>Author's support</h4>
-          </div>
-          <div class="h-body text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, excepturi, maiores, dolorem quasi
-              reprehenderit illo accusamus nulla minima repudiandae quas ducimus reiciendis odio sequi atque temporibus
-              facere corporis eos expedita? </p>
-          </div>
-        </div>
-      </div>
-      <!-- /row  -->
-    </div>
-  </div>
-  <!-- /Highlights -->
-  <!-- container -->
-  <div class="container">
-    <h2 class="text-center top-space">Frequently Asked Questions</h2>
-    <br>
-    <div class="row">
-      <div class="col-sm-6">
-        <h3>Which code editor would you recommend?</h3>
-        <p>I'd highly recommend you <a href="http://www.sublimetext.com/">Sublime Text</a> - a free to try text editor
-          which I'm using daily. Awesome tool! </p>
-      </div>
-      <div class="col-sm-6">
-        <h3>Nice header. Where do I find more images like that one?</h3>
-        <p> Well, there are thousands of stock art galleries, but personally, I prefer to use photos from these sites:
-          <a href="http://unsplash.com">Unsplash.com</a> and <a
-            href="http://www.flickr.com/creativecommons/by-2.0/tags/">Flickr - Creative Commons</a> </p>
-      </div>
-    </div>
-    <!-- /row -->
-    <div class="row">
-      <div class="col-sm-6">
-        <h3>Can I use it to build a site for my client?</h3>
-        <p> Yes, you can. You may use this template for any purpose, just don't forget about the <a
-            href="http://creativecommons.org/licenses/by/3.0/">license</a>, which says: "You must give appropriate
-          credit", i.e. you must provide the name of the creator and a link to the original template in your work. </p>
-      </div>
-      <div class="col-sm-6">
-        <h3>Can you customize this template for me?</h3>
-        <p>Yes, I can. Please drop me a line to sergey-at-pozhilov.com and describe your needs in details. Please note,
-          my services are not cheap. </p>
-      </div>
-    </div>
-    <!-- /row -->
-    <div class="jumbotron top-space">
-      <h3 class="thin">Git jest systemem kontroli wersji, którego programiści używają do śledzenia, i&nbsp;udostępniania
-        kodu.</h3>
-      <p class="text-muted"> <span class="bold">GIT</span> działa lokalnie przechowując dane w ukrytym folderze na
-        naszym dysku komputera, które nazywamy <span class="bold">repozytorium</span>. Można przechowywać kopię lub
-        utworzyć nowe repozytorium online np. na stronie <a href="https://github.com/">GitHub</a> lub <a
-          href="https://bitbucket.org/">BitBucket</a> udostępniając je prywatnie lub publicznie, ułatwiając zespołowi
-        programistów pracę na tym samym kodzie projektu nie przeszkadzając sobie wzajemnie. </p>
-      <p> Po zakończeniu pracy programistów nad projektem kod z repozytorium można połączyć, i wydać wersję ostateczną
-        gotowego projektu. </p>
-      <p class="text-right"> <a href="./pages/git.html" class="btn btn-primary btn-sm active" role="button"
-          aria-pressed="true">Learn more »</a> </p>
-    </div>
-  </div>
-  <!-- /container -->
-  <footer id="footer" class="top-space">
-    <div class="footer1">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 widget">
-            <h3 class="widget-title">Contact</h3>
-            <div class="widget-body">
-              <p>+48 12 1234567 <br>
-                <a href="mailto:#">sabazia@interia.pl</a> <br>
-                <br>
-                Poland, Cracow City, Downtown. </p>
+    <section class="menu cid-nav" once="menu" id="top">
+        <nav
+            class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="menu-logo">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="https://fotokrakus.com">
+                            <img src="assets/images/ico/logo-128x128.png" alt="Logo FotoKrakus" style="height: 3.8rem;">
+                        </a>
+                    </span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4"
+                            href="https://fotokrakus.com/">FotoKrakus</a></span>
+                </div>
             </div>
-          </div>
-          <div class="col-md-3 widget">
-            <h3 class="widget-title">Follow me</h3>
-            <div class="widget-body">
-              <p class="follow-me-icons"> <a href="https://twitter.com/Krakusek1959" class="social-icon-button twitter"
-                  target="_blank"> <i class="fa fa-twitter" aria-hidden="true"></i> <span></span> </a> <a
-                  href="https://plus.google.com/u/0/+KrzysztofSzuszkiewicz" class="social-icon-button gplus"
-                  target="_blank"> <i class="fa fa-google-plus" aria-hidden="true"></i> <span></span> </a> <a
-                  href="https://www.facebook.com/fotokrakus/" class="social-icon-button facebook" target="_blank"> <i
-                    class="fa fa-facebook" aria-hidden="true"></i> <span></span> </a> <a
-                  href="https://www.youtube.com/user/szusztof" class="social-icon-button youtube" target="_blank"> <i
-                    class="fa fa-youtube" aria-hidden="true"></i> <span></span> </a> <a
-                  href="https://www.linkedin.com/in/krzysztof-szuszkiewicz-50b621141/"
-                  class="social-icon-button linkedin" target="_blank"> <i class="fa fa-linkedin" aria-hidden="true"></i>
-                  <span></span> </a> </p>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="index.html#top">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="index.html#us-a">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4"
+                            href="assets/gallery/galeria-poz.html" target="_blank">GalleryPhoto</a></li>
+                </ul>
             </div>
-          </div>
-          <div class="col-md-6 widget">
-            <h3 class="widget-title">Text widget</h3>
-            <div class="widget-body">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto
-                voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore
-                optio velit hic iusto
-                vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde? </p>
-              <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident
-                assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo
-                officia tenetur at ea quos doloribus
-                dolorum voluptate reprehenderit architecto sint libero illo et hic. </p>
+        </nav>
+    </section>
+
+    <section class="tytul fk-fullscreen fk-parallax-background">
+        <div class="fk-overlay" style="opacity: 0.3; background-color: rgb(118, 118, 118);"></div>
+        <div class="container align-center">
+            <div class="row justify-content-md-center">
+                <div class="fk-white col-md-10">
+                    <h1 class="fk-section-title fk-bold pb-3 fk-fonts-style display-1">STUDIO ARTYSTYCZNE
+                        <div>i twórcze miłośników
+                        </div>
+                        <div>fotografii ulicznej</div>
+                    </h1>
+                    <p class="fk-text pb-3 fk-fonts-style display-2">Szuszkiewicz Krzysztof - PhotoKrakus</p>
+                    <div class="fk-section-btn"><a class="btn btn-md btn-white-outline display-4"
+                            href="assets/gallery/galeria-poz.html" target="_blank">Photo Gallery</a></div>
+                </div>
             </div>
-          </div>
         </div>
-        <!-- /row of widgets -->
-      </div>
-    </div>
-    <div class="footer2">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 widget">
-            <div class="widget-body">
-              <p class="widget-simplenav"> <a class="active" href="#">Home</a> | <a href="./pages/git.html">git</a> | <a
-                  href="./pages/git-more.html">Git - repo</a> | <a href="./pages/uprawnienia.html">Uprawnienia</a> | </p>
-            </div>
-          </div>
-          <div class="col-md-6 widget">
-            <div class="widget-body">
-              <p class="text-right"> Copyright &COPY; 2000 - 2019 | <a href="https://fotokrakus.com/">FotoKrakus</a> |
-                All Rights Reserved </p>
-            </div>
-          </div>
+        <div class="fk-arrow hidden-sm-down" aria-hidden="true">
+            <a href="#next">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </a>
         </div>
-        <!-- /row of widgets -->
-      </div>
-    </div>
-  </footer>
-  <!-- build:js -->
-  <script src="./js/jquery/jquery-3.2.1.min.js"></script>
-  <script src="./js/jquery/jQuery.headroom.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/headroom.min.js"></script>
-  <script src="./js/cookies-alert-plugin/cookies-alert-core.js"></script>
-  <script src="./js/cookies-alert-plugin/cookies-alert-script.js"></script>
-  <script src="./js/template.js"></script>
-  <script>
-    document.write('<script src="js/top.js"><\/script>');
-  </script>
-  <!-- endbuild -->
-  <input name="animation" type="hidden">
-  <input name="cookieData" type="hidden" data-cookie-text="We use cookies to give you the best experience.
-               Read our <a href='./pages/privacy.html'>cookie policy</a>">
+    </section>
+
+    <section class="feres fea-tur">
+        <div class="container align-center">
+            <h2 class="fk-section-title pb-3 fk-fonts-style display-2">Fotografia uliczna - StreetPhoto</h2>
+            <h3 class="fk-section-subtitle pb-5 fk-fonts-style display-5">Fotografia uliczna jest sztuką, wymaga dużo
+                kreatywności.</h3>
+            <div class="media-container-column">
+                <div class="row justify-content-center">
+                    <div class="card p-4 col-12 col-md-6">
+                        <div class="media pb-3">
+                            <div class="media-body">
+                                <h4 class="card-title py-2 align-left fk-fonts-style display-5">Podstawa fotografii
+                                    StreetPhoto</h4>
+                            </div>
+                        </div>
+                        <div class="card-box align-left">
+                            <p class="fk-text fk-fonts-style display-7"><strong>Podstawą fotografii ulicznej</strong>
+                                jest dokumentowanie codziennego życia ludzi na ulicach miast i wsi. Będąc fotografem
+                                ulicznym nie muszę opuszczać miejsca, w którym mieszkam, by robić ciekawe i dobre
+                                zdjęcia.
+                                <br>
+                                <br>Fotografia uliczna jest typem fotografii wykonywanej zazwyczaj bez zgody i
+                                znajomości osoby, którą fotografuję. <br>Fotografia ta wymaga fotografowania tutaj i
+                                teraz, bo nie ma fotografii ulicznej za chwilę, i nie można jej zrobić ponownie.</p>
+                        </div>
+                    </div>
+                    <div class="card p-4 col-12 col-md-6">
+                        <div class="media pb-3">
+                            <div class="media-body">
+                                <h4 class="card-title py-2 align-left fk-fonts-style display-4">&nbsp;</h4>
+                            </div>
+                        </div>
+                        <div class="card-box align-left">
+                            <p class="fk-text fk-fonts-style display-7">Nie zobaczysz już prawdziwej natury osoby oraz
+                                jej zachowania, która zwróciła sobą moją uwagę, gdy się zawahasz i spóźnisz ze spustem
+                                migawki aparatu. Możesz się zbliżać do obcych osób i poprosić o pozwolenie na zrobienie
+                                zdjęcia, ale będzie to statyczne zdjęcie pozowane, a nie z ukrytej kamery, aby uchwycić
+                                emocje, i pokazać charakter osoby. <br><br>Musisz mieć dużo czasu, aby wyczekać, i
+                                'strzelić' migawką aparatu dany moment, ale mając praktykę i cierpliwość będzie coraz
+                                łatwiej.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-container-row image-row">
+                    <div class="fk-figure" style="width: 60%;">
+                        <img src="assets/images/fotografia-uliczna-1332x785.jpg"
+                            alt="FotoKrakus Podstawa fotografii ulicznej">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fk-section gitar fk-parallax-background">
+        <div class="fk-overlay" style="opacity: 0.2; background-color: rgb(228, 210, 149);">
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="media-container-column title col-12 col-md-10">
+                    <h2 class="align-left fk-bold fk-white pb-3 fk-fonts-style display-2">Co to jest fotografia
+                        uliczna?<br><br></h2>
+                    <h3 class="fk-section-subtitle align-left fk-light fk-white pb-3 fk-fonts-style display-5">
+                        Fotografia uliczna pokazuje codzienne chwile życia, jak też życie publiczne, ukazuje dynamiczne
+                        sceny. Ujawnia ludzi, którzy robią zwyczajne rzeczy czyli - pracują, bawią się,
+                        rozmawiają.&nbsp;<br><br>Ulica nie jest ustawiona do zdjęcia jak modelka, wszystko dzieje się tu
+                        i teraz, przedstawia spontaniczne zachowania, z których są fantastyczne portrety, również
+                        szczegóły człowieka (nogi, nogi, ręce itp.) są częścią zdjęć ulicznych. Wymaga też myślenia,
+                        cierpliwości oraz dobrych umiejętności fotograficznych.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step3 zasada-16" id="step3-5">
+        <div class="container">
+            <h2 class="fk-section-title pb-3 fk-fonts-style align-center display-1">Zasada słońca"16"</h2>
+            <h3 class="fk-section-subtitle pb-5 fk-fonts-style align-center display-5"><br><strong>Najłatwiejsze
+                    ustawienie Zasady słońca "16":</strong><br><br>
+
+                <div class="card-box align-left">
+                    <p class="fk-text fk-fonts-style display-7">Najłatwiejszym sposobem na ustawienie aparatu do
+                        fotografii ulicznej jest przełączenie go na tryb AV (tryb priorytetu przysłony) i ręczne
+                        wybieranie
+                        f-stop (przysłona) i ISO. Aparat sam wtedy określi prędkość migawki (ekspozycja).</p>
+                    <div>
+
+                        <div class="card-box align-left">
+                            <p class="fk-text fk-fonts-style display-7">Proponuję stosowanie dobrze znanej i działającej
+                                zwłaszcza w aparatach analogowych oraz w aparatach
+                                bez światłomierza "zasadę słońca 16", która jest używana w fotografii do ustawiania
+                                prawidłowej
+                                ekspozycji w różnych warunkach oświetleniowych bez użycia światłomierza.</p>
+                        </div>
+            </h3>
+            <div class="media-container-row">
+                <div class="media-block" style="width: 50%;">
+                    <div class="fk-figure">
+                        <img src="assets/images/ustawienia-aparatu-1024x768.jpg" alt="Zasada słońca 16">
+                    </div>
+                </div>
+                <div class="step-container">
+                    <div class="card separline pb-4">
+                        <div class="step-element d-flex">
+                            <div class="step-wrapper pr-3">
+                                <div class="step d-flex align-items-center justify-content-center">
+                                    100
+                                </div>
+                            </div>
+                            <div class="step-text-content">
+                                <h4 class="fk-step-title pb-3 fk-fonts-style display-5">ISO 100</h4>
+                                <p class="fk-step-text fk-fonts-style display-7">
+                                    ISO 100 - W słoneczny dzień, mając aparat z czułością ISO 100, ustaw przysłonę na f
+                                    / 16 i czas otwarcia migawki na 1/100 s (lub najbliższa wartość, np. 1/125 s);
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card separline pb-4">
+                        <div class="step-element d-flex">
+                            <div class="step-wrapper pr-3">
+                                <div class="step d-flex align-items-center justify-content-center">
+                                    200
+                                </div>
+                            </div>
+                            <div class="step-text-content">
+                                <h4 class="fk-step-title pb-3 fk-fonts-style display-5">ISO 200</h4>
+                                <p class="fk-step-text fk-fonts-style display-7">
+                                    ISO 200 - W słoneczny dzień, mając aparat z czułością ISO 200, ustaw przysłonę na f
+                                    / 16 i czas otwarcia migawki na 1/200 s (lub najbliższa wartość, np. 1/250 s);</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="step-element d-flex">
+                            <div class="step-wrapper pr-3">
+                                <div class="step d-flex align-items-center justify-content-center">
+                                    400
+                                </div>
+                            </div>
+                            <div class="step-text-content">
+                                <h4 class="fk-step-title pb-3 fk-fonts-style display-5">ISO 400</h4>
+                                <p class="fk-step-text fk-fonts-style display-7">
+                                    ISO 400 - W słoneczny dzień, mając aparat z czułością ISO 400, ustaw przysłonę na f
+                                    / 16 i czas otwarcia migawki na 1/400 s (lub najbliższa wartość, np. 1/500 s);</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="header7 you-tu">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="media-content align-right">
+                    <h1 class="fk-section-title fk-white pb-3 fk-fonts-style display-1">
+                        Prezentacja zdjęć z filmem
+                    </h1>
+                    <div class="fk-section-text fk-white pb-3">
+                    </div>
+                </div>
+                <div class="fk-figure" style="width: 110%;"><iframe class="fk-embedded-video"
+                        src="https://www.youtube.com/embed/ZZxnWTRP0WA?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=1&amp;playlist=ZZxnWTRP0WA"
+                        width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fk-section abo-ut" id="us-a">
+        <div class="container">
+            <div class="row justify-content-center content-row">
+                <div class="media-container-column title col-12 col-lg-7 col-md-6">
+                    <h2 class="align-left fk-bold fk-fonts-style display-2">O mnie</h2>
+                </div>
+                <div class="media-container-column col-12 col-lg-3 col-md-4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fk-section article abo-ut2">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="row col-12 col-md-12">
+                    <div class="col-12 fk-text fk-fonts-style col-md-6 display-7">
+                        <p>Moją pasją jest nie tylko Front-end Developer ale również jest to fotografia, pasja ta trwa
+                            już od lat 80. Moja praca aparatem polega głównie na fotografii architektury, portretów oraz
+                            fotografii ulicznej czyli: Street Photo.
+                        </p>
+                        <p>Przeważają w moich pracach zdjęcia czarno - białe, w których mogę wyrazić więcej emocji,
+                            niż w kolorze. Poza tym wychowałem się w okresie fotografii czarno - białej, i pracowałem na
+                            negatywach czarno - białych aparatami analogowymi takimi jak: Nikon, Zenit, Fed5, które mam
+                            do dziś, i nadal działają.
+                        </p>
+                        <p>Aparatem analogowym wykonuję zdjęcia, gdy jest coś ważnego dla mnie, coś co aparatem cyfrowym
+                            jeszcze nie osiągnę.</p>
+                    </div>
+                    <div class="col-12 fk-text fk-fonts-style display-7 col-md-6">
+                        <p>Nie na darmo poszukiwane są starsze obiektywy aparatów analogowych mających gwint M42 takich
+                            marek jak: Helios czy Pentacon, które za pomocą redukcji mocowania obiektywu do dowolnej
+                            marki aparatu są do nich montowane, i używane w fotografii ulicznej jak też makro fotografii
+                            ze względu na plastykę obrazu i świetny bokeh.
+                        </p>
+                        <p>Jak tylko są warunki i mogę zoomować 'nogami' to pracuję lustrzanką Nikon DX na obiektywach
+                            stałoogniskowych 35mm firmy Nikon - Nikkor co daje mi przy przeliczeniu x 1,5 ~ 52mm,
+                            ogniskowa ta pokrywa mi w większości moje sesje.
+                        </p>
+                        <p>
+                        </p>
+                        <p>Zdjęcia fotografii ulicznej zamieściłem w <a href="assets/gallery/galeria-poz.html"
+                                target="_blank">Galeria foto</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bl-wh">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="fk-figure pr-lg-5" style="width: 50%;">
+                    <img src="assets/images/black and white-792x1120.jpg" alt="Photos black and white">
+                </div>
+                <div class="media-content px-3 align-self-center fk-white py-2">
+                    <p class="fk-text fk-fonts-style display-5">
+                        <strong>Zdjęcia w kolorze czy czarno - białe?</strong>
+                        <br><br>
+                    </p>
+                    <p class="fk-text fk-fonts-style display-7">
+                        To bardziej filozofia niż prawdziwe pytanie. Lubię zdjęcia czarno - białe, ale to jest
+                        osobisty wybór, i zależy również od tematu zdjęcia (są tematyzdjęcia, które wymagają
+                        koloru).<br><br>
+                        Wielcy mistrzowie pracowali w kolorze czarno - białym ale to Twój wybór i musisz to sam
+                        wypróbować.
+                    </p>
+                    <p class="fk-text fk-fonts-style display-7">
+                        Ważne jest, aby znaleźć swój własny styl, bo wtedy ludzie rozpoznają twoje zdjęcia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="praw-aut">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="media-container-row">
+                    <div class="fk-figure m-auto" style="width: 30%;">
+                        <img src="assets/images/prawo autorskie-520x638.jpg"
+                            alt="Fotokrakus streetphoto prawo autorskie">
+                    </div>
+                    <div class=" align-left aside-content">
+                        <h2 class="fk-title pt-2 fk-fonts-style display-6">Co jest dozwolone przy Street Shoot?</h2>
+                        <div class="fk-section-text">
+                            <p class="fk-text mb-5 pt-3 fk-light fk-fonts-style display-5">
+                            Zasadniczo można robić zdjęcia w dowolnym miejscu w miejscu publicznym, a zazwyczaj
+                            obejmuje to osoby. Musisz jednak pamiętać, że niekoniecznie trzeba publikować wszystko,
+                            co przechwyci aparat.
+                            </p>
+                        </div>
+                        <div class="block-content">
+                            <div class="card p-3 pr-3">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="card-title fk-fonts-style display-7">
+                                            Przestrzeganie prawa.</h4>
+                                    </div>
+                                </div>
+                    <div class="card-box">
+                        <p class="block-text fk-fonts-style display-7">W dzisiejszych czasach
+                            wszechobecnych blogów ze zdjęciami, społeczności online i niekończących się
+                            agencji fotografii ważne jest, aby wiedzieć, jakie podstawowe zasady należy
+                            przestrzegać podczas podejmowania i publikowania zdjęć fotograficznych.
+                            <br>
+                            <br>
+                            <br>Przestrzeganie prawa osobistego nie wskazuje na brak odwagi, ale stanowi
+                            raczej znak szacunku, który może zaoszczędzić wiele kłopotów i trudności
+                            prawnych. Fotografie na stronach, które są dostępne wszystkim ludziom w
+                            miejscach publicznych, trzeba zrewidować, określić co możesz, a czego nie możesz
+                            opublikować, i sam musisz ocenić, kiedy prosić o pozwolenie na opublikowanie.
+                        </p>
+                    </div>
+                            </div>
+                            <div class="card p-3 pr-3">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="card-title fk-fonts-style display-7">Prawo autorskie</h4>
+                                    </div>
+                                </div>
+                                <div class="card-box">
+                                    <p class="block-text fk-fonts-style display-7">
+                                        Jeśli fotografujesz kogoś i zamierzasz opublikować dowolne lub wszystkie wyniki
+                                        online lub w formie drukowanej, zawsze powinieneś prosić o zgodę. Jeśli jednak
+                                        osoba stawia na aparat, to uważa się za równoważną udzieloną koncesję. Musisz
+                                        zawsze uzyskać odrębne pozwolenie, jeśli nie jest jasne dla podmiotu, którego
+                                        obrazy są przeznaczone do publikacji. Prawo autorskie i prawa odnoszące się do
+                                        sztuki tworzącej sztukę różnią się w zależności od kraju, więc zawsze skontaktuj
+                                        się z ekspertem prawniczym, jeśli nie masz pewności, które przepisy mają
+                                        zastosowanie do danej sytuacji.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="col-md-12">
+                <div class="media-container-row">
+                    <div class="fk-figure m-auto" style="width: 30%;">
+                        <img src="assets/images/publikacja-520x780.jpg" alt="fotokrakus zgoda na publikację">
+                    </div>
+                    <div class=" align-left aside-content">
+                        <div class="fk-section-text">
+                        </div>
+                        <div class="block-content">
+                            <div class="card p-3 pr-3">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="card-title fk-fonts-style display-7">
+                                            Prawa osobiste</h4>
+                                    </div>
+                                </div>
+                                <div class="card-box">
+                                    <p class="block-text fk-fonts-style display-7">
+                                        Prawa osobiste zazwyczaj mają pierwszeństwo przed prawami regulującymi ogólną
+                                        swobodę artystyczną. Nie wolno publikować zdjęć osób, które zostały wykonane bez
+                                        ich wiedzy, chyba że później otrzymasz zgodę. Często pomaga uzyskać pozwolenie,
+                                        jeśli proponujesz przesłać wydruk jednego z Twoich zdjęć. Powszechna plotka, że
+                                        możesz publikować zdjęcia grup pięciu lub więcej osób bez pytania o pozwolenie
+                                        jest bezpodstawna. <br><br>Ludzie zazwyczaj wymagają zgody na publikowanie ich
+                                        zdjęć,
+                                        chociaż istnieją wyjątki. Strzały takie jak rusztowanie naprzeciwko, w których
+                                        ludzie pojawiają się tylko przypadkowo i nie są rzeczywistym temat obrazu są
+                                        zazwyczaj publikowane bez uzyskania zgody. Innymi słowy, jeśli osoba lub osoby
+                                        na zdjęciu są retuszowane lub zmieniane bez zmiany charakteru zdjęcia, zazwyczaj
+                                        jesteś na bezpiecznym gruncie.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card p-3 pr-3">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="card-title fk-fonts-style display-7">Publikacja zdjęć</h4>
+                                    </div>
+                                </div>
+                                <div class="card-box">
+                                    <p class="block-text fk-fonts-style display-7">Jeśli osoba na zdjęciu jest
+                                        nieostra, bardzo mała, jako sylwetka lub w jakikolwiek inny sposób zmieniona, co
+                                        czyni je nierozpoznawalnymi, zwykle wolno publikować bez specjalnej zgody.
+                                        Wydarzenia publiczne, jeśli fotografujesz parady, targi lub inne imprezy
+                                        publiczne, możesz ogólnie publikować zdjęcia osób, jeśli są one przedstawione w
+                                        kontekście samego wydarzenia i nie stanowią tematu zdjęcia. Ludzie, którzy biorą
+                                        udział w takich wydarzeniach, są świadomi faktu, że mogą się fotografować i nie
+                                        mogą nalegać na prawo do wydawania zgody na publikowanie ich podobieństwa.
+                                        <br>
+                                        <br>Portrety, które nie odnoszą się w większym stopniu do tematu miejsca, nie
+                                        mogą być publikowane bez uprzedniego uzyskania zgody osoby, nawet jeśli dana
+                                        osoba znajduje się w miejscu publicznym. Uregulowania prawne różnią się w
+                                        zależności od kraju i sytuacji, więc zawsze należy uzyskać zgodę, nawet jeśli
+                                        nie jesteś pewien, czy potrzebujesz. Pamiętaj, że jeśli osoba chętnie pozuje, to
+                                        może być interpretowane jako argument do fotografowania, i udzielenia pozwolenia
+                                        publikacji dla fotografa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fk-section in-grad">
+        <div class="container">
+            <div class="row main justify-content-center">
+                <div class="media-container-column col-12 col-lg-3 col-md-4">
+                    <div class="fk-section-btn align-left py-4"><a class="btn btn-white-outline display-4"
+                            href="index.html#step3-5">Zasada Słońca 16</a></div>
+                </div>
+                <div class="media-container-column title col-12 col-lg-7 col-md-6">
+                    <h2 class="align-right fk-bold fk-white pb-3 fk-fonts-style display-2">"Strzelanie z biodra"</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feres tryb-cam" id="feres-e">
+        <div class="container align-center">
+            <h2 class="fk-section-title pb-3 fk-fonts-style display-2">Technika "Strzelanie z biodra ..."</h2>
+            <h3 class="fk-section-subtitle pb-5 fk-fonts-style display-5">tzn. szybko, niedostrzegalne przez innych i
+                bez wahania, ale wtedy nie ma kontroli nad tym, 'co robi' aparat, więc nie zawsze jest to najlepsza
+                metoda.</h3>
+            <div class="media-container-column">
+                <div class="row justify-content-center">
+                    <div class="card p-4 col-12 col-md-6 col-lg-4">
+                        <div class="media pb-3">
+                            <div class="media-body">
+                                <h4 class="card-title py-2 align-left fk-fonts-style display-5">Ustawienia aparatu</h4>
+                            </div>
+                        </div>
+                        <div class="card-box align-left">
+                            <p class="fk-text fk-fonts-style display-7">Tryb aparatu <em>automatyczny</em> jest dość
+                                przyzwoity, ale nie można polegać na nim w słabym świetle, gdy czas otwarcia migawki
+                                może być zbyt wolny, aby zamrozić sytuację dynamiczną.
+                                <br>
+                                <br>Czasami aparat nie może być podniesiony do oka, więc "strzał biodrowy" jest
+                                użytecznym sposobem na uchwycenie decydującego momentu.</p>
+                        </div>
+                    </div>
+                    <div class="card p-4 col-12 col-md-6 col-lg-4">
+                        <div class="media pb-3">
+                            <div class="media-body">
+                                <h4 class="card-title py-2 align-left fk-fonts-style display-5">Wybór miejsca</h4>
+                            </div>
+                        </div>
+                        <div class="card-box align-left">
+                            <p class="fk-text fk-fonts-style display-7">Jeśli temat zdjęcia jest w pewnej odległości,
+                                można podejść używając nóg jako zoomu, aby ustawić się we właściwym miejscu i czasie.
+                                <br>
+                                <br>Również korzystanie z teleobiektywu pozwala 'dotrzeć do osoby', i poczuć, że jesteś
+                                w tłumie jako jego uczestnik, stojąc po drugiej stronie ulicy.</p>
+                        </div>
+                    </div>
+                    <div class="card p-4 col-12 col-md-6 col-lg-4">
+                        <div class="media pb-3">
+                            <div class="media-body">
+                                <h4 class="card-title py-2 align-left fk-fonts-style display-5">
+                                    Wyobraźnia
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="card-box align-left">
+                            <p class="fk-text fk-fonts-style display-7">Spacerując przez ruchliwą ulicę lub inne
+                                miejsce, należy robić zdjęcia tylko z 'otwartymi oczami' i wyobraźnią na interesujące
+                                tematy.
+                                <br>
+                                <br>Poprzez praktykę i ćwiczenia wyobraźni w fotografii można przewidzieć rozwój akcji
+                                ulicznej czy wybrać ciekawe miejsce.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-container-row image-row">
+                    <div class="fk-figure" style="width: 60%;">
+                        <img src="assets/images/strzelanie z biodra-1332x882.jpg"
+                            alt="FotoKrakus Technika Strzelanie z biodra">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="header3 fk-bg01 fk-parallax-background">
+        <div class="fk-overlay" style="opacity: 0.8; background-color: rgb(35, 35, 35);">
+        </div>
+        <div class="container">
+            <div class="media-container-row">
+                <div class="media-content">
+                    <h1 class="fk-section-title fk-white pb-3 fk-fonts-style display-2">Co sprawia, że jest 'dobre'
+                        zdjęcie ulicy?
+                    </h1>
+                    <div class="fk-section-text fk-white pb-3 ">
+                        <p class="fk-text fk-fonts-style display-5">
+                            <br><br><strong>Właściwie nie wiem</strong>. To nie jest łatwe pytanie. Dużo obserwuję,
+                            patrzę na każdą osobę na ulicach przez ułamek sekundy. Staram się przewidzieć sceny z góry,
+                            zobaczyć przed nimi ciekawe tła czy kolory, szukam osób do portretu o charakterystycznej
+                            twarzy. Trzeba wiele obserwować, i nie można po prostu stać w jednym miejscu i czekać na
+                            osobę do portretu, chodzi o kompozycję. Dobre zdjęcie działa tylko z dobrym składem
+                            kompozycji czyli: pierwszy plan, obiekt, tło, reguły. Chciałbym powiedzieć, że kompozycja
+                            wynosi 33% obrazu, 33% obiekt, i 33% prawidłowa ekspozycja. <br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="header9 cre-at">
+        <div class="container">
+            <div class="media-container-column fk-white">
+                <h3 class="fk-section-subtitle align-left fk-light pb-3 fk-fonts-style display-2"><strong>Jak
+                        zwiększyć kreatywność?</strong></h3>
+                <p class="fk-text align-left pb-3 fk-fonts-style display-5"><br>Rozpocznij serię tylko ze szczegółami
+                    osób (rąk, stóp, okularów itp.) Ustaw sobie własne ćwiczenia (kolory, motywy, tytuły itp.) Spójrz na
+                    zdjęcia inaczej, wystarczy stanąć na skrzyżowaniu przez 15 minut i patrzeć na wszystko. Spróbuj z
+                    ekstremalnych kompozycji, trzymaj aparat po przekątnej, do góry nogami, z tyłu, zrób pewien element
+                    i włącz go do swoich zdjęć. Wypróbuj różne i skrajne formaty (np. 1: 5), użyj obiektywu makro i
+                    wykonaj zdjęcia na ulicy lub '<a href="index.html#feres-e">strzelaj z biodra</a>' przez cały
+                    dzień.<br></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="foot-map">
+        <div class="container">
+            <div class="media-container-row content fk-white">
+                <div class="col-12 col-md-3 fk-fonts-style display-6">
+                    <p>
+                        <strong>Address</strong>
+                        <br>
+                        <br>Cracow 31-042
+                        <br>Old Town
+                        <br>Poland
+                        <br>
+                        <br><strong>Contact</strong>
+                        <br>
+                        <br>Szuszkiewicz Krzysztof
+                        <br><span class="socicon-mail"></span> fotokrakus (at) yahoo.com                        
+                    </p>
+                </div>
+                <div class="col-12 col-md-3 fk-fonts-style display-7">
+                    <p class="fk-text">
+                        <strong>Link</strong>
+                        <br>
+                        <br><a class="text-primary" href="https://fotokrakus.com/assets/gallery/galeria-poz.html" target="_BLANK">My Photo Gallery</a>
+                        <br><a class="text-primary" href="https://fotokrakus.com/webmastering/" target="_BLANK">Webmastering</a>
+                        <br><a class="text-primary" href="http://szusztof.ct8.pl/" target="_BLANK">My StreetPhoto</a>
+                        <br>
+                        <br><strong>Opinion</strong>
+                        <br>
+                        <br>Send us your ideas, information about errors and suggestions. Every opinion is valuable to
+                        me.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="google-map"><iframe frameborder="0" style="border:0"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10248.122404365835!2d19.9525046!3d50.048258049999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spl!4v1558036017056!5m2!1sen!2spl"
+                            allowfullscreen=""></iframe></div>
+                </div>
+            </div>
+            <div class="footer-lower">
+                <div class="media-container-row">
+                    <div class="col-sm-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="media-container-row fk-white">
+                    <div class="col-sm-6 copyright">
+                        <p class="fk-text fk-fonts-style display-7">&copy; Copyright 2019 FotoKrakus.com - All Rights
+                            Reserved - Szuszkiewicz Krzysztof<br><br>Copyright of all documents and scripts belonging to
+                            this site by
+                            Front-end FotoKrakus.com - Most of the information contained on this site is copyrighted
+                            material. It is illegal to copy or redistribute this information in any way without the
+                            expressed written consent of the author.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="social-list align-right">
+                            <div class="soc-item">
+                                <a href="https://twitter.com/" target="_blank">
+                                    <span class="socicon-twitter socicon fk-iconfont fk-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="https://www.facebook.com/fotokrakus/" target="_blank">
+                                    <span class="socicon-facebook socicon fk-iconfont fk-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="https://www.youtube.com/user/szusztof" target="_blank">
+                                    <span class="socicon-youtube socicon fk-iconfont fk-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="https://www.instagram.com/fotokrakus/" target="_blank">
+                                    <span class="socicon-instagram socicon fk-iconfont fk-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="https://github.com/PhotoKrakus" target="_blank">
+                                    <span class="socicon-github socicon fk-iconfont fk-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                    <a href="https://github.com/PhotoKrakus" target="_blank">
+                                        <span class="socicon-bitbucket socicon fk-iconfont fk-iconfont-social"></span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/web/popper.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/dropdown/js/script.min.js"></script>
+    <script src="assets/web/jquery.touch-swipe.min.js"></script>
+    <script src="assets/web/jarallax.min.js"></script>
+    <script src="assets/web/smooth-scroll.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+    <script src="assets/web/cookies-alert-plugin/cookies-alert-core.js"></script>
+    <script src="assets/web/cookies-alert-plugin/cookies-alert-script.js"></script>
+
+    <div id="scrollToTop" class="fk-arrow-up"><a style="text-align: center;"><i class=""></i></a></div>
+    <input name="animation" type="hidden">
+    <input name="cookieData" type="hidden"
+        data-cookie-text="We use cookies to give you the best experience. Read our <a href='privacy.html' target='_blank'>cookie policy</a>.">
 </body>
 
 </html>
